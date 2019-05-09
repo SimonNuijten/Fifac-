@@ -28,16 +28,15 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //var dgurl = "DGURL";
-            string id = "id";
-            string users = "username";
+            
+            string team = "team";
+            
 
-            var url = string.Format("http://simonnuijten.nl/teams.php?username=users{0}", users);
+            var url = string.Format("http://simonnuijten.nl/teams.php?name=team", team);
             using (var webClient = new WebClient())
             {
                 var response = webClient.DownloadString(url);
-                //Console.WriteLine(response);
-                //listBox1.Items.Add(response);
+                
                 phpdataLabel.Text = response;
                 
             }
