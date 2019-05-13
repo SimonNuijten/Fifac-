@@ -43,15 +43,27 @@ namespace WindowsFormsApp1
             timer1.Enabled = true;
 
             string team = "team";
+            string response;
             
             var url = string.Format("http://simonnuijten.nl/teams.php?name=team", team);
             using (var webClient = new WebClient())
             {
-                var response = webClient.DownloadString(url);
-                
-                phpdataLabel.Text = response;
-                
+                response = webClient.DownloadString(url);
+
+                Teams teams = JsonConvert.DeserializeObject<Teams>(response);
+
+                //Teams teams = JsonConvert.DeserializeObject<Teams>(response);
+
+                //string[] splitScores = response.Trim().Split('\n');
+
+                for (int i = 0; i < teams.names.Count; i++)
+                {
+                    comboBox1.Items.Add(teams.names[i].ToString());
+                }
+
             }
+
+
 
 
 
