@@ -40,10 +40,10 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            timer1.Enabled = true;
+
             string team = "team";
             
-
             var url = string.Format("http://simonnuijten.nl/teams.php?name=team", team);
             using (var webClient = new WebClient())
             {
@@ -88,6 +88,11 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             save();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            usernameLabel.Text = "Welkom " + Program.username;
         }
     }
 }

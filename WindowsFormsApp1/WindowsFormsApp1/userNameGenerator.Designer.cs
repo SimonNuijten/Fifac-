@@ -38,6 +38,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(8, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
@@ -47,6 +48,7 @@
             // userNameLabel
             // 
             this.userNameLabel.AutoSize = true;
+            this.userNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.userNameLabel.Location = new System.Drawing.Point(8, 31);
             this.userNameLabel.Name = "userNameLabel";
             this.userNameLabel.Size = new System.Drawing.Size(35, 13);
@@ -55,12 +57,13 @@
             // 
             // generator
             // 
+            this.generator.BackColor = System.Drawing.Color.Silver;
             this.generator.Location = new System.Drawing.Point(11, 54);
             this.generator.Name = "generator";
             this.generator.Size = new System.Drawing.Size(217, 20);
             this.generator.TabIndex = 2;
             this.generator.Text = "Genereer Account";
-            this.generator.UseVisualStyleBackColor = true;
+            this.generator.UseVisualStyleBackColor = false;
             this.generator.Click += new System.EventHandler(this.generator_Click);
             // 
             // nameController
@@ -71,7 +74,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(244, 318);
+            this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.Naamloos1;
+            this.ClientSize = new System.Drawing.Size(244, 85);
             this.Controls.Add(this.generator);
             this.Controls.Add(this.userNameLabel);
             this.Controls.Add(this.label1);

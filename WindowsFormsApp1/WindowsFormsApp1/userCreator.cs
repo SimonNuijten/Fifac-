@@ -11,7 +11,7 @@ namespace WindowsFormsApp1
         public void random()
         {
             Random random = new Random();
-            int User = random.Next(1, 10);
+            int User = random.Next(1, 11);
             if(User == 1)
             {
                 Program.username = "Ronald";
@@ -47,6 +47,10 @@ namespace WindowsFormsApp1
             if (User == 9)
             {
                 Program.username = "Fleur";
+            }
+            if (User == 10)
+            {
+                Program.username = "Yousli";
             }
 
         }
