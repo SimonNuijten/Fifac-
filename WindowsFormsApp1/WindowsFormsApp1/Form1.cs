@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -14,6 +16,8 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        const string SAVE_LOCATION = "saved-game.json";
+
         public Form1()
         {
             InitializeComponent();
@@ -24,7 +28,15 @@ namespace WindowsFormsApp1
             
         }
 
+        public void save()
+        {
+            Save save = new Save();
+            save.name = Program.username;
 
+            string saveJson = JsonConvert.SerializeObject(save);
+            // Write the saved game to a text file
+            File.WriteAllText(SAVE_LOCATION, saveJson);
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -71,6 +83,11 @@ namespace WindowsFormsApp1
             */
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            save();
         }
     }
 }
