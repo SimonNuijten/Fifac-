@@ -111,7 +111,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "25")
+            if (comboBox1.Text == "25" && Program.amount < 1)
             {
                 Program.amount += 25;
             }
