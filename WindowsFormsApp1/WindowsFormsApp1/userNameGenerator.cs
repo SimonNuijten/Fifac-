@@ -51,6 +51,7 @@ namespace WindowsFormsApp1
                 string saveJson = File.ReadAllText(SAVE_LOCATION);
                 Save save = JsonConvert.DeserializeObject<Save>(saveJson);
                 Program.username = save.name;
+                Program.amount = save.amount;
                 if (Program.username != "")
                 {
                     Form1 form1 = new Form1();

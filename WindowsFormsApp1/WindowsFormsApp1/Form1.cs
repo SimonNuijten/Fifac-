@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
         {
             Save save = new Save();
             save.name = Program.username;
+            save.amount = Program.amount;
 
             string saveJson = JsonConvert.SerializeObject(save);
             // Write the saved game to a text file
@@ -105,6 +106,15 @@ namespace WindowsFormsApp1
         private void timer1_Tick(object sender, EventArgs e)
         {
             usernameLabel.Text = "Welkom " + Program.username;
+            amountLabel.Text = "Uw saldo is : " + Program.amount;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "25")
+            {
+                Program.amount += 25;
+            }
         }
     }
 }
