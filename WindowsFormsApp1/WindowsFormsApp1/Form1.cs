@@ -116,5 +116,5 @@ namespace WindowsFormsApp1
                 Program.amount += 25;
             }
         }
-    }
+    }   
 }
